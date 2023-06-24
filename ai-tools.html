@@ -60,8 +60,9 @@
         }
 
         function f_onLoad(){
+            var strUserUniqueIdentifier = '';
             if (getCookie('custom_userid') != null){
-                var strUserUniqueIdentifier = getRandomNumber() + '.' + getCurrentTimeStamp();
+                strUserUniqueIdentifier = getRandomNumber() + '.' + getCurrentTimeStamp();
             }
             setCookie('custom_userid',strUserUniqueIdentifier);
         }
