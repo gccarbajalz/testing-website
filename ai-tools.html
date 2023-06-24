@@ -29,7 +29,7 @@
             bottom: 0;
         }
     </style>
-    <script language="javacript">
+    <script language="javascript">
         function getRandomNumber() {
             var min = Math.pow(10, 9); // Minimum 10-digit number (1000000000)
             var max = Math.pow(10, 10) - 1; // Maximum 10-digit number (9999999999)
@@ -60,7 +60,9 @@
         }
 
         function f_onLoad(){
-            var strUserUniqueIdentifier = getRandomNumber() + '.' + getCurrentTimeStamp();
+            if (getCookie('custom_userid') != null){
+                var strUserUniqueIdentifier = getRandomNumber() + '.' + getCurrentTimeStamp();
+            }
             setCookie('custom_userid',strUserUniqueIdentifier);
         }
 
