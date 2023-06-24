@@ -78,7 +78,7 @@
     function f_onLoad(){
         var strUserUniqueIdentifier = getCookie('custom_userid');           
         if (strUserUniqueIdentifier == null || strUserUniqueIdentifier == ''){
-            strUserUniqueIdentifier == getParamValue('custom_userid');
+            strUserUniqueIdentifier == getParamValue('cuid');
             if (strUserUniqueIdentifier == null || strUserUniqueIdentifier == ''){
                 strUserUniqueIdentifier = getRandomNumber() + '.' + getCurrentTimeStamp();
             }
