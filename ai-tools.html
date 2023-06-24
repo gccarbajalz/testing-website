@@ -80,8 +80,16 @@
         }
     
         function customRedirect(url){
-            window.location.href = url+'?cuid='+getCookie('custom_userid');
+            //window.location.href = url+'?cuid='+getCookie('custom_userid');
+            window.location.href = url;
         }
+
+        function handleBeforeUnload(event) {
+            var destinationURL = event.detail.destinationURL;            
+            alert(destinationURL);
+        }
+        
+        window.addEventListener('beforeunload', handleBeforeUnload);
     </script>
 </head>
 <body onload="f_onLoad()">
