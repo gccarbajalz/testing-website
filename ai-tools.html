@@ -54,14 +54,14 @@
         }
 
         function getCookie(name) {
-        var re = new RegExp(name + "=([^;]+)");
-        var value = re.exec(document.cookie);
+            var re = new RegExp(name + "=([^;]+)");
+            var value = re.exec(document.cookie);
             return (value != null) ? unescape(value[1]) : null;
         }
 
         function f_onLoad(){
-            var strUserUniqueIdentifier = '';
-            if (getCookie('custom_userid') != null){
+            var strUserUniqueIdentifier = getCookie('custom_userid');            
+            if (strUserUniqueIdentifier == null || strUserUniqueIdentifier == ''){
                 strUserUniqueIdentifier = getRandomNumber() + '.' + getCurrentTimeStamp();
             }
             setCookie('custom_userid',strUserUniqueIdentifier);
